@@ -228,7 +228,7 @@
             var map = new google.maps.Map(document.getElementById("map"), mapProp);            
             // Marker js
             var marker = new google.maps.Marker({
-                position : new google.maps.LatLng(40.7128, -74.0059),
+                position : new google.maps.LatLng(3.7091, 34.8625),
                 map : map
             });
         }
