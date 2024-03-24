@@ -694,7 +694,7 @@ textarea.form-control {
 }
 
 .events-post-meta li {
-    color: #CC446C;
+    color: #5b3c19;
     display: inline-block;
     font-size: 13px;
     line-height: 20px;
@@ -750,29 +750,23 @@ textarea.form-control {
 
 .donation-area {
     background: url('img/about/donate-bg.jpg') no-repeat scroll center top / cover;
+    
 }
 
+.donation-area .container {
+    background: cover;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.845);
+}
 .donate-form {
-    padding: 50px;
+    padding-left: 250px;
+    padding-top: 50px;
     position: relative;
-}
-
-.donate-form::before {
-    position: absolute;
-    left: 0;
-    content: "";
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .7);
-}
-
-.form-group {
-    margin-bottom: 20px;
 }
 
 .form-group h3 {
     color: #fff;
+    margin-left: 55px;
     margin-bottom: 15px;
     text-transform: capitalize;
 }
