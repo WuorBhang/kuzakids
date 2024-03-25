@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Roboto:400,400i,600,600i,700,700i');
-
 body {
     font-size: 14px;
     font-weight: 400;
@@ -507,7 +506,7 @@ nav {
     top: 50%;
 }
 
-.service-content i img{
+.service-content i img {
     font-size: 30px;
     color: #5c4328;
     width: 60px;
@@ -750,7 +749,7 @@ textarea.form-control {
 
 .donation-area {
     background: url('img/about/donate-bg.jpg') no-repeat scroll center top / cover;
-    
+
 }
 
 .donation-area .container {
@@ -758,6 +757,7 @@ textarea.form-control {
     width: auto;
     background-color: rgba(0, 0, 0, 0.845);
 }
+
 .donate-form {
     padding-left: 250px;
     padding-top: 50px;
