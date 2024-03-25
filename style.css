@@ -618,42 +618,50 @@ nav {
     background-color: #ffffff;
 }
 
-img {
+.team-area .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.single-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-info {
+    margin-bottom: 5px;
+}
+
+.team-info img {
+    width: 100%;
+    height: auto;
     border-radius: 15px;
-    width: 95%;
 }
 
-a img {
-    background-color: transparent;
+.single-team-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-.teams-ins h4 {
-    font-size: 20px;
+.single-team::before { /* Pseudo-element to create overlay */
+    position: absolute;
+    transition: opacity 0.3s ease; /* Add transition */
 }
 
-textarea.form-control {
-    height: 200px;
+.single-team:hover::before { /* Show overlay on hover */
+    opacity: 1;
 }
 
-.quick-contact-area {
-    background-color: #F6F6F6;
-    padding: 100px 0;
-}
-
-.quick-contact-area .contact-info {
-    padding: 0 100px 0 50px;
-}
-
-.quick-contact {
-    padding: 0 50px;
-    width: 50%;
-}
-
-.quick-contact h2 {
-    font-weight: 700;
-    font-size: 34px;
-    margin-bottom: 30px;
+.single-team:hover { /* Enlarge on hover */
+    transform: scale(1.1);
 }
 
 
