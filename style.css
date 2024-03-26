@@ -174,7 +174,7 @@ input:focus {
 
 .tem-btn:hover,
 .tem-btn:focus {
-    color: #1a1a1a;
+    color: #feddad;
 }
 
 /***** button part end *****/
@@ -404,14 +404,15 @@ nav {
 
 .single-banner-txt h1 {
     color: #fff;
-    font-size: 72px;
-    margin-bottom: 20px;
+    font-size: 50px;
+    padding-top: 100px;
+    margin-bottom: 25px;
     text-transform: capitalize;
     animation-delay: 0.3s;
 }
 
 .single-banner-txt h1 span {
-    color: #3f2e14;
+    color: #feddad;
 }
 
 .single-banner-txt p {
