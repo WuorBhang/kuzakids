@@ -1,26 +1,36 @@
 <?php
 
-  // Replace uhuribhang211@gmail.com with your real receiving email address
-  
-  $receiving_email_address = 'uhuribhang211@gmail.com';
+$receiving_email_address = 'uhuribhang21@gmail.com';
 
-  if( file_exists($php_email_form = '../js/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+if (file_exists($php_email_form = '../js/vendor/php-email-form/php-email-form.php')) {
+    include($php_email_form);
+} else {
+    die('Unable to load the "PHP Email Form" Library!');
+}
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+$contact = new PHP_Email_Form;
+$contact->ajax = true;
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+if (isset($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['message'])) {
+    $contact->from_name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $contact->from_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $contact->subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
+    $contact->message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+    
+    if (!filter_var($contact->from_email, FILTER_VALIDATE_EMAIL)) {
+        echo 'Invalid email address. Please check and try again.';
+        exit;
+    }
 
-  echo $contact->send();
+    $contact->to = $receiving_email_address;
+
+    $contact->add_message($contact->from_name, 'From');
+    $contact->add_message($contact->from_email, 'Email');
+    $contact->add_message($contact->message, 'Message', 10);
+
+    echo $contact->send();
+} else {
+    echo 'Please complete all fields.';
+}
+
 ?>
